@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom font */
+@font-face {
+    font-family: 'Monogram'; /* Name your font */
+    src: url('/monogram.ttf') format('truetype'); /* Adjust the path to your font file */
+    font-weight: normal; /* Optional: Define the weight */
+    font-style: normal;  /* Optional: Define the style */
+  }
+
+@layer base{
+    body{
+        @apply font-monogram
+    }
+    a{
+        @apply text-blue-600 hover:text-blue-800 underline underline-offset-2 ; 
+    }
+}

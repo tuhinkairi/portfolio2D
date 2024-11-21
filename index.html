@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio of Tuhin Kairi, a Next.js and MERN stack developer skilled in building innovative full-stack solutions with React, Redux, Tailwind CSS, and AI integrations." />
+    <meta name="author" content="Tuhin Kairi" />
+    <meta name="keywords" content="Tuhin Kairi, Portfolio, Web Developer, Next.js, MERN Stack, AI Integration, Tailwind CSS, React Developer, Full-Stack Developer, Projects" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0f172a" />
+  
+    <meta property="og:title" content="Tuhin Kairi | Portfolio" />
+    <meta property="og:description" content="Explore the portfolio of Tuhin Kairi, showcasing innovative full-stack and AI-based projects." />
+    <meta property="og:image" content="https://example.com/portfolio-preview.png" />
+    <meta property="og:url" content="https://your-portfolio-url.com" />
+    <meta property="og:type" content="website" />
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tuhin Kairi | Portfolio" />
+    <meta name="twitter:description" content="Check out the portfolio of Tuhin Kairi, a full-stack and AI developer." />
+    <meta name="twitter:image" content="https://example.com/portfolio-preview.png" />
+  
+    <link rel="icon" href="/tk-logo.svg" />
+    
+    <link rel="stylesheet" href="index.css" />
+  
+    <title>Tuhin Kairi | Portfolio</title>
+  </head>
+  
+  <body class="font-monogram overflow-hidden text-2xl relative ">
+    <p class="note text-white absolute z-50 top-5 md:top-10 left-5 md:left-10">
+      Tap/Click around to move
+    </p>
+    <div
+      id="textbox-container" style="display: none;"
+      class="bottom-3 absolute w-full flex items-center justify-center"
+    >
+      <div id="textbox" class=" px-5 py-2 mx-5 md:mx-20 bg-white  rounded-md border-black border ">
+        <p id="dialogue" class="ui-text ">
+        </p>
+        <div class="btn-container w-fit ml-auto">
+          <button id="close" class="ui-close-btn bg-gray-200 hover:bg-gray-300 px-2 rounded-md">Close</button>
+        </div>
+      </div>
+    </div>
+    <canvas id="game"></canvas>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>  
