@@ -1,6 +1,6 @@
-# **2D RPG Game with Kaboom.js**
+# **2D Portfolio with Kaboom.js**
 
-Welcome to the **2D RPG Game** project, built with the **Kaboom.js** library! This game features a fully interactive world, collision-based dialogues, and smooth animations. Explore the world, interact with objects, and enjoy the seamless gameplay.
+Welcome to the **2D Portfolio** project, built with the **Kaboom.js** library! This game features a fully interactive world, collision-based dialogues, and smooth animations. Explore the world, interact with objects, and enjoy the seamless gameplay.
 
 ## **About the Project**
 
