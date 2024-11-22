@@ -10,6 +10,17 @@
     font-style: normal;  /* Optional: Define the style */
   }
 
+
+#infoControl:hover::after{
+    content: "info";
+    position: absolute;
+    left: 0;
+    bottom:100%;    
+    z-index: 1;
+    background-color: black;
+    padding: 3px;
+}
+
 @layer base{
     body{
         @apply font-monogram
