@@ -1,6 +1,6 @@
 import { dialogueData, scaleFactor } from "./constant";
 import { k } from "./kaboomCtx";
-import { displayDialogue, setCamScale } from "./utils";
+import { closeBtnClick, displayDialogue, setCamScale } from "./utils";
 
 //name , source
 k.loadSprite("spritesheet", "./spritesheet.png", {
@@ -23,7 +23,7 @@ k.loadSprite("spritesheet", "./spritesheet.png", {
 
 k.loadSprite("map", "./map.png");
 
-k.setBackground(k.Color.fromHex("#751047"));
+k.setBackground(k.Color.fromHex("#351047"));
 
 k.scene("main", async () => {
   const LoadBaseMap = await fetch("./map.json");
@@ -50,7 +50,7 @@ k.scene("main", async () => {
     },
     "player",
   ]);
-  
+
   for (const layer of layers) {
     if (layer.name === "boundaries") {
       for (const boundary of layer.objects) {
@@ -66,7 +66,6 @@ k.scene("main", async () => {
         //   todo boundry not detect collison
         // collied
         if (boundary.name) {
-          
           player.onCollide(boundary?.name, () => {
             // console.log("collide with", boundary.name);
 
@@ -102,7 +101,7 @@ k.scene("main", async () => {
   setCamScale(k);
   k.onResize(setCamScale(k));
 
-  //   controls
+  // control release
   k.onMouseRelease((e) => {
     switch (player.direction) {
       case "down":
@@ -120,6 +119,55 @@ k.scene("main", async () => {
         break;
     }
   });
+  // on release animation
+  k.onKeyRelease("left", (e) => {
+    player.flipX = true;
+    player.play("idle-side");
+  });
+  k.onKeyRelease("right", (e) => {
+    player.flipX = false;
+    player.play("idle-side");
+  });
+  k.onKeyRelease("up", (e) => {
+    player.play("idle-up");
+  });
+  k.onKeyRelease("down", (e) => {
+    player.play("idle-down");
+  });
+
+  // control with key
+  // close dialog
+  k.onKeyDown("escape",(e)=>closeBtnClick())
+
+  // stop movement if the dialog box is open
+  k.onKeyDown("left", (e) => {
+    if ( player.isInDialogue) return;
+    player.flipX = true;
+    if (player.curAnim() !== "walk-side") player.play("walk-side");
+    player.move(-player.speed, 0); //(x,y)
+    player.direction = "left";
+  });
+  k.onKeyDown("right", (e) => {
+    if (player.isInDialogue) return;
+    player.flipX = false;
+    if (player.curAnim() !== "walk-side") player.play("walk-side");
+    player.move(player.speed, 0);
+    player.direction = "right";
+  });
+  k.onKeyDown("up", (e) => {
+    if (player.isInDialogue) return;
+    if (player.curAnim() !== "walk-up") player.play("walk-up");
+    player.move(0, -player.speed);
+    player.direction = "up";
+  });
+  k.onKeyDown("down", (e) => {
+    if (player.isInDialogue) return;
+    if (player.curAnim() !== "walk-down") player.play("walk-down");
+    player.move(0, player.speed);
+    player.direction = "down";
+  });
+
+  // control with mouse
   k.onMouseDown((e) => {
     if (e.key === "left" || player.isInDialogue) return; // stop the movement for the dialog box
     const worldMousePos = k.toWorld(k.mousePos());
@@ -151,6 +199,7 @@ k.scene("main", async () => {
       player.direction = "right";
     }
   });
+  // end the check
 });
 
 k.go("main");

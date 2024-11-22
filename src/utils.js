@@ -1,7 +1,7 @@
 export function displayDialogue(text, onDisplayEnd) {
   const dialogUI = document.getElementById("textbox-container");
   const dialogue = document.getElementById("dialogue");
-
+  
   dialogUI.style.display = "block";
   let index = 0;
   let currentText = "";
@@ -12,11 +12,12 @@ export function displayDialogue(text, onDisplayEnd) {
       index++;
       return;
     }
+    
     clearInterval(intervalRef);
   }, 5);
-  const closeBtn = document.getElementById("close");
+const closeBtn = document.getElementById("close");
 
-  function onCloseBtnClick() {
+function onCloseBtnClick() {
     onDisplayEnd();
     dialogUI.style.display = "none";
     dialogue.innerHTML = "";
@@ -30,4 +31,8 @@ export function displayDialogue(text, onDisplayEnd) {
 export function setCamScale(k) {
   const factor = k.width() / k.height();
   factor < 1 ? k.camScale(k.vec2(1)) : k.camScale(k.vec2(1.5));
+}
+
+export function closeBtnClick(){
+  document.getElementById("close").click()
 }
