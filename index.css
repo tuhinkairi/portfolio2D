@@ -10,8 +10,8 @@
     font-style: normal;  /* Optional: Define the style */
   }
 
-
-#infoControl:hover::after{
+@media (min-width: 540px) {
+  #infoControl:hover::after{
     content: "info";
     position: absolute;
     left: 0;
@@ -19,6 +19,7 @@
     z-index: 1;
     background-color: black;
     padding: 3px;
+  }
 }
 
 @layer base{
