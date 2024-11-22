@@ -937,17 +937,6 @@
                  "y":80
                 }, 
                 {
-                 "height":16,
-                 "id":171,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":16,
-                 "x":320,
-                 "y":64
-                }, 
-                {
                  "height":24,
                  "id":173,
                  "name":"tv",
@@ -960,6 +949,17 @@
                 }, 
                 {
                  "height":16,
+                 "id":171,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":320,
+                 "y":64
+                }, 
+                {
+                 "height":16,
                  "id":187,
                  "name":"achievements",
                  "rotation":0,
@@ -968,10 +968,33 @@
                  "width":16,
                  "x":96,
                  "y":64
+                }, 
+                {
+                 "height":16,
+                 "id":191,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":32,
+                 "y":96
+                },
+            
+                {
+                 "height":16,
+                 "id":192,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":32,
+                 "y":128
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -998,8 +1021,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":9,
- "nextobjectid":188,
+ "nextlayerid":10,
+ "nextobjectid":193,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.0",
